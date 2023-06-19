@@ -10,7 +10,9 @@ const NoteItem = (props) => {
       <div className="card my-3">
         <div className="card-body">
           <div className="d-flex align-items-center">
-            <h5 className="card-title">{note.title}</h5>
+            <h5 className="card-text" style={{ width: 219 }}>
+              {note.title}
+            </h5>
             <i
               className="fa-solid fa-trash mx-2"
               onClick={() => {
@@ -25,7 +27,7 @@ const NoteItem = (props) => {
               }}
             ></i>
           </div>
-          <p className="card-text">{note.description}</p>
+          <p className="card-text">{note.description} </p>
         </div>
       </div>
     </div>
