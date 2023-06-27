@@ -1,10 +1,27 @@
-const connectToMongo = require("./db");
+// const connectToMongo = require("./db");
 const express = require("express");
 const app = express();
 const port = 4000;
 var cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-connectToMongo();
+const uri = process.env.REACT_APP_MONGOURI;
+
+mongoose
+
+  .connect(uri, {
+    dbName: "TaskBook",
+  })
+  .then(() => {
+    console.log("Connect To MongoDb Atlas Was SuccessFull");
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log("Connect To MongoDb Atlas Was Un-SuccessFull");
+  });
+
+// connectToMongo();
 app.use(express.json());
 app.use(cors());
 
