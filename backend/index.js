@@ -6,7 +6,8 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const uri = process.env.REACT_APP_MONGOURI;
+const uri =
+  "mongodb+srv://task:taskbook@taskbook.yzc6cnl.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
 
